@@ -10,7 +10,7 @@ $db = new Database($config['database']);
 //Queries
 
 $sql = "SELECT * from books where authors_id = :id ";
-$results = $db->execute($sql, ['id'=>$currentUserId ])->fetchAll();
+$results = $db->execute($sql, ['id'=>$currentUserId ])->findAll();
 ?>
 
 <!-- End main -->

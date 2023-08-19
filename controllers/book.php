@@ -11,13 +11,7 @@ $db = new Database($config['database']);
 //Queries
 
 $sql = "SELECT * from books where id = :id ";
-$book = $db->execute($sql, ['id' => $_GET["id"]])->fetch();
+$book = $db->execute($sql, ['id' => $_GET["id"]])->findOrFail();
 
-if (!$book) {
-    abort(404);
-} 
-elseif($book["authors_id"] !== $currentUserId) {
-    abort(403);
-}
-
+authorize($currentUserId===4,Response::FORBIDDEN);
 require './views/book.view.php';
