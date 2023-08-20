@@ -2,6 +2,9 @@
 //vars
 $page = 'Book Creation';
 
+//require
+require 'Validator.php';
+
 //connect with the database
 $config = require 'config.php';
 $db = new Database($config['database']);
@@ -10,12 +13,16 @@ $db = new Database($config['database']);
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $errors = [];
+    $validator = new Validator();
 
-    if (strlen($_POST['title']) === 0) {
-        $errors['title'] = 'a title is required';
-    } 
-    if (strlen($_POST['desc']) ==0) {
-        $errors['desc'] = 'a description is required';
+    if($validator->lenghtValidator($_POST["title"],2,255))
+    {
+        $errors["title"] = "Title must be between 2 and 255 characters";
+    }
+    
+    if($validator->lenghtValidator($_POST["desc"],10,1000))
+    {
+        $errors["desc"] = "Description must be between 10 and 1000 characters";
     }
 
 

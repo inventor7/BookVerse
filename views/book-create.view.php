@@ -20,16 +20,15 @@ require 'partials\navbar.php';
                         Title
                     </label>
                 </div>
-                <?php if (isset($errors["title"])) : ?>
-                    <p class="text-sm text-red-700 underline">
-                        <?= $errors["title"] ?>
-                    </p>
-                <?php endif; ?>
             </div>
 
 
             <div class="sm:col-span-9">
-                <input  id="title" name="title" type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-white dark:border-gray-700 dark:text-gray-700">
+                <input id="title" name="title" value="<?= ($_POST["title"]) ?? "" ?>" type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-white dark:border-gray-700 dark:text-gray-700">
+
+                <p class="text-xs mt-2 text-red-500 underline <?php echo isset($errors["title"]) === false ? "hidden" : "block" ?>">
+                    <?= $errors["title"] ?>
+                </p>
             </div>
 
 
@@ -53,17 +52,15 @@ require 'partials\navbar.php';
                     <label for="desc" class="inline-block text-sm font-medium text-gray-500 mt-2.5">
                         Description
                     </label>
-                    <?php if (isset($errors["desc"])) : ?>
-                        <p class="text-sm text-red-700 underline">
-                            <?= $errors["desc"] ?>
-                        </p>
-                    <?php endif; ?>
                 </div>
             </div>
 
 
             <div class="sm:col-span-9">
-                <textarea  id="desc" name="desc" class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-white dark:border-gray-700 dark:text-gray-700" rows="6" placeholder="Add a description"></textarea>
+                <textarea id="desc" name="desc" class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-white dark:border-gray-700 dark:text-gray-700" rows="6" placeholder="Add a description"><?= ($_POST["desc"]) ?? "" ?></textarea>
+                <p class="text-xs mt-2 text-red-500 underline <?php echo isset($errors["desc"]) === false ? "hidden" : "block" ?>">
+                    <?= $errors["desc"] ?>
+                </p>
             </div>
 
         </div>
