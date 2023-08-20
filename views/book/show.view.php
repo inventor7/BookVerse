@@ -1,5 +1,5 @@
 <?php
-require path('views/partials/header.php')
+view('partials/header', ['page' => 'Books']);
 ?>
 
 <main class=" mt-24  flex flex-col justify-center items-center w-full px-10 py-10">
@@ -28,4 +28,5 @@ require path('views/partials/header.php')
 
 
 <?php
-view('partials/footer'); ?>
+view('partials/footer'); 
+?>

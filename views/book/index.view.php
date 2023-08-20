@@ -1,5 +1,5 @@
 <?php
-require path('views/partials/header.php');
+view('/partials/header', ['page' => 'Book'])
 ?>
 
 
@@ -47,6 +47,5 @@ require path('views/partials/header.php');
 </main>
 
 <?php
-
-require 'views/partials/footer.php'
+view('/partials/footer');
 ?>
