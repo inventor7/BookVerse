@@ -1,7 +1,6 @@
 <?php 
-$page= 'authors';
 
-require './views/authors.view.php';
 
+view('authors', ['page' => 'Authors']);
 
  

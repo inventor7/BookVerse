@@ -1,13 +1,13 @@
 <?php
-require 'views/partials/navbar.php'; ?>
+require path('views/partials/header.php')
 ?>
 
 <main class=" mt-24  flex flex-col justify-center items-center w-full px-10 py-10">
-    <a href="/Bookverse/books" class=" self-start flex flex-row  px-2 py-0.5 bg-blue-700/40 backdrop-blur-lg rounded-xl w-fit gap-2 ">
+    <a href="/books" class=" self-start flex flex-row  px-2 py-0.5 bg-blue-700/40 backdrop-blur-lg rounded-xl w-fit gap-2 ">
         <span class="material-symbols-outlined text-lg hover:text-blue-600">
             arrow_back_ios_new
         </span>
-        <p class="text-white text-lg hover:text-blue-600 " >Back</p>
+        <p class="text-white text-lg hover:text-blue-600 ">Back</p>
     </a>
     <div class=" flex flex-row justify-start items-start w-full h-[70vh]  py-4 gap-10 ">
         <div class="w-1/5 h-full  ">
@@ -28,5 +28,4 @@ require 'views/partials/navbar.php'; ?>
 
 
 <?php
-require 'views/partials/footer.php'; ?>
-?>
+view('partials/footer'); ?>

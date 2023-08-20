@@ -1,18 +1,20 @@
 <?php
-$page = 'books';
-$currentUserId = 4;
-
 //connect with the database
-$config = require 'config.php';
+$config = require path('config.php');
 $db = new Database($config['database']);
 
 
 //Queries
 
 $sql = "SELECT * from books where authors_id = :id ";
-$results = $db->execute($sql, ['id'=>$currentUserId ])->findAll();
+$results = $db->execute($sql, ['id' => 4])->findAll();
 ?>
 
 <!-- End main -->
 
-<?php require './views/book/index.view.php'; ?>
+<?php
+view('/book/index', [
+    'page' => 'Books',
+    'results' => $results
+]);
+?>

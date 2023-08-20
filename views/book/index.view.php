@@ -1,9 +1,10 @@
 <?php
-require 'views/partials/navbar.php'; ?>
+require path('views/partials/header.php');
+?>
 
 
 <main class="max-w-[85rem] mt-20 px-4 py-4 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-    <a href="/Bookverse/book/create" class="fixed z-10  bottom-10 right-10 flex flex-row gap-2 justify-center items-center px-3 py-2 bg-blue-700 text-white font-semibold rounded-full ">
+    <a href="/book/create" class="fixed z-10  bottom-10 right-10 flex flex-row gap-2 justify-center items-center px-3 py-2 bg-blue-700 text-white font-semibold rounded-full ">
         <span class="material-symbols-outlined text-4xl">
             add_circle
         </span>
@@ -25,20 +26,20 @@ require 'views/partials/navbar.php'; ?>
 
 
     <!-- Grid -->
-    <div class="grid grid-cols-2  sm:grid-cols-4 md:grid-cols-5 gap-3 lg:gap-10">
-
+    <div class="grid grid-cols-2  sm:grid-cols-4 md:grid-cols-5 gap-3 lg:gap-x-10 lg:gap-y-14">
         <?php foreach ($results as $book) : ?>
-            <div class=" flex flex-col justify-between items-center rounded-xl gap-2 cursor-pointer ">
+            <div href="/book?id=<?= $book["id"] ?>" class="relative flex flex-col justify-between items-center rounded-xl gap-2 cursor-pointer ">
                 <div class="relative w-full  h-full hover:scale-[1.025] transition-all duration-300 ease-in-out">
                     <img class="  object-fill w-full h-full rounded-xl" src="https://m.media-amazon.com/images/I/51B7kuFwQFL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg" alt="">
                     <div class="absolute inset-0 w-full  h-full rounded-xl transition-all duration-300 ease-in-out hover:ring-4 ring-blue-600    "></div>
                 </div>
                 <div class=" w-full ">
-                    <a href="/Bookverse/book?id=<?= $book["id"] ?>" class=" font-bold text-gray-300 text-lg text-start "><?= $book["title"] ?></a>
+                    <a  class=" font-bold text-gray-300 text-lg text-start "><?= $book["title"] ?></a>
+                    <!-- <a href="/author?id=<?= $book["authors_id"] ?>" class=" font-semibold text-gray-500 text-sm text-start ">By <?= $book["authors_id"] ?></a> -->
                 </div>
+                <a class=" absolute inset-0 " href="/book?id=<?= $book["id"] ?>"></a>
             </div>
         <?php endforeach ?>
-
     </div>
     <!-- End Grid -->
 

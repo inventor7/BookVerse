@@ -1,5 +1,3 @@
 <?php
 
-$page = 'about';
-
-require './views/about.view.php';
+view('about',['page' => 'About']);

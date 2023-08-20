@@ -31,3 +31,15 @@ function authorize($state, $code = Response::FORBIDDEN)
       abort($code);
    }
 }
+
+
+function path($path)
+{
+   return BASE_PATH . $path;
+}
+
+function view($view, $data = [])
+{
+   extract($data);
+   require path("views/{$view}.view.php");
+}

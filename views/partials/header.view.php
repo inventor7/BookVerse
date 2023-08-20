@@ -1,4 +1,4 @@
-<?php $homeUrl = "/Bookverse"; ?>
+<?php $homeUrl = ""; ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 
@@ -16,7 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
 
     <!-- Icon -->
-    <link rel="icon" href="assets\logo.png">
+    <link rel="icon" href="<? echo path('assets/BookVerse.svg') ?>">
     <title>BookVerse</title>
 </head>
 
@@ -25,7 +25,7 @@
     <nav class="fixed inset-0 h-12 sm:h-16 z-10 backdrop-blur-lg bg-blue-950/40 flex flex-row justify-between items-center gap-4  rounded-full px-1 sm:px-3 py-1 sm:py-2  mt-4 mx-2 sm:mx-8 ">
         <div class="left ">
             <a href="/Bookverse">
-                <img class="rounded-full h-10 w-10 sm:h-14 sm:w-14" src="./assets/logo.png" alt="logo" class="logo">
+                <img class="rounded-full h-10 w-10 sm:h-14 sm:w-14" src="<?= path('assets/logo.png') ?>" alt="logo" class="logo">
             </a>
         </div>
 
@@ -36,10 +36,10 @@
 
         <div class="mid hidden  flex-1 sm:flex flex-col items-center text-lg text-white ">
             <ul class=" flex flex-row justify-between items-center w-2/3 xl:w-1/2 ">
-                <li><a class=" <?= navigationStyle("/Bookverse/") ?> px-4 py-2  rounded-lg  transition-all ease-in-out duration-200" href="<?= $homeUrl ?>/">Home</a></li>
-                <li><a class=" <?= navigationStyle("/Bookverse/books") ?> px-4 py-2 rounded-lg  transition-all ease-in-out duration-200" href="<?= $homeUrl ?>/books">Books</a></li>
-                <li><a class=" <?= navigationStyle("/Bookverse/about") ?> px-4 py-2 rounded-lg  transition-all ease-in-out duration-200" href="<?= $homeUrl ?>/about">About</a></li>
-                <li><a class=" <?= navigationStyle("/Bookverse/authors") ?> px-4 py-2 rounded-lg  transition-all ease-in-out duration-200" href="<?= $homeUrl ?>/authors">Authors</a></li>
+                <li><a class=" <?= navigationStyle("/") ?> px-4 py-2  rounded-lg  transition-all ease-in-out duration-200" href="/">Home</a></li>
+                <li><a class=" <?= navigationStyle("/books") ?> px-4 py-2 rounded-lg  transition-all ease-in-out duration-200" href="/books">Books</a></li>
+                <li><a class=" <?= navigationStyle("/about") ?> px-4 py-2 rounded-lg  transition-all ease-in-out duration-200" href="/about">About</a></li>
+                <li><a class=" <?= navigationStyle("/authors") ?> px-4 py-2 rounded-lg  transition-all ease-in-out duration-200" href="/authors">Authors</a></li>
             </ul>
         </div>
 
@@ -47,7 +47,7 @@
             <ul class="flex flex-row justify-between items-center gap-8 ">
                 <li class="avatar">
                     <a class=" h-8 w-8 sm:w-12 sm:h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2" href="#">
-                        <img class="rounded-full" src="./assets/avatar.jpg" alt="">
+                        <img class="rounded-full" src="<?= path('assets/avatar.jpg') ?>" alt="">
                     </a>
                 </li>
             </ul>

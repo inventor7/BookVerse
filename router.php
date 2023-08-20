@@ -1,6 +1,7 @@
 <?php 
 $currentUrl = parse_url($_SERVER['REQUEST_URI'])["path"];
-$routes = require 'routes.php';
+$routes = require path('routes.php');
+
 
 router($currentUrl,$routes);
 

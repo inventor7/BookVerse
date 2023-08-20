@@ -1,7 +1,7 @@
  <?php
- 
-  require 'partials\navbar.php';
-  require 'partials\hero.php';
-  require 'partials\footer.php'
-  ?>
+    view('partials/header', ['page' => 'Home']);
+    view('partials/hero', ['page' => 'Home']);
+    view('partials/footer', ['page' => 'Home']);
+
+    ?>
 

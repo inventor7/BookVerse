@@ -1,9 +1,9 @@
 <?php
-require 'views/partials/navbar.php'; ?>
+require path('views/partials/header.php');
 ?>
 
 <main class=" mt-24  flex flex-col justify-center items-center w-full px-10 py-10">
-    <a href="/Bookverse/books" class=" self-start flex flex-row  px-2 py-0.5 bg-blue-700/40 backdrop-blur-lg rounded-xl w-fit gap-2 ">
+    <a href="/books" class=" self-start flex flex-row  px-2 py-0.5 bg-blue-700/40 backdrop-blur-lg rounded-xl w-fit gap-2 ">
         <span class="material-symbols-outlined text-lg hover:text-blue-600">
             arrow_back_ios_new
         </span>
@@ -11,7 +11,7 @@ require 'views/partials/navbar.php'; ?>
     </a>
 
 
-    <form method="POST" action="/Bookverse/book/create">
+    <form method="POST" action="/book/create">
         <div class="grid sm:grid-cols-12 gap-2 sm:gap-4 py-8 first:pt-0 last:pb-0 ">
 
             <div class="sm:col-span-3">
@@ -83,6 +83,5 @@ require 'views/partials/navbar.php'; ?>
 
 
 <?php
-require 'views/partials/footer.php'; ?>
-
+require path('views/partials/footer.php');
 ?>

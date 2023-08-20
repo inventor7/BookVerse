@@ -1,5 +1,4 @@
 <?php 
 
-$page = "404";
-require './views/404.views.php'
+view('404', ['page' => '404'])
 ?>
