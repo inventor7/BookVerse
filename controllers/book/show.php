@@ -14,4 +14,4 @@ $sql = "SELECT * from books where id = :id ";
 $book = $db->execute($sql, ['id' => $_GET["id"]])->findOrFail();
 
 authorize($currentUserId===4,Response::FORBIDDEN);
-require './views/book.view.php';
+require './views/book/show.view.php';

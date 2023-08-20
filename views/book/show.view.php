@@ -1,5 +1,5 @@
 <?php
-require 'partials\navbar.php';
+require 'views/partials/navbar.php'; ?>
 ?>
 
 <main class=" mt-24  flex flex-col justify-center items-center w-full px-10 py-10">
@@ -28,5 +28,5 @@ require 'partials\navbar.php';
 
 
 <?php
-require 'partials\footer.php'
+require 'views/partials/footer.php'; ?>
 ?>

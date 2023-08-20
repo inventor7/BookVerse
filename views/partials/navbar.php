@@ -16,7 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
 
     <!-- Icon -->
-    <link rel="icon" href="./../assets/logo.png">
+    <link rel="icon" href="assets\logo.png">
     <title>BookVerse</title>
 </head>
 

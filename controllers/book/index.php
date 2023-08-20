@@ -15,4 +15,4 @@ $results = $db->execute($sql, ['id'=>$currentUserId ])->findAll();
 
 <!-- End main -->
 
-<?php require './views/books.view.php'; ?>
+<?php require './views/book/index.view.php'; ?>

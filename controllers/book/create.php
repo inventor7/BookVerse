@@ -13,14 +13,13 @@ $db = new Database($config['database']);
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $errors = [];
-    $validator = new Validator();
 
-    if($validator->lenghtValidator($_POST["title"],2,255))
+    if(!Validator::lenghtValidator($_POST["title"],2,255))
     {
         $errors["title"] = "Title must be between 2 and 255 characters";
     }
     
-    if($validator->lenghtValidator($_POST["desc"],10,1000))
+    if(!Validator::lenghtValidator($_POST["desc"],10,1000))
     {
         $errors["desc"] = "Description must be between 10 and 1000 characters";
     }
@@ -41,4 +40,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 
-require './views/book-create.view.php';
+require './views/book/create.view.php';
