@@ -1,4 +1,7 @@
 <?php
+
+use Core\Response;
+
 function navigationStyle($url)
 {
    $currentUrl =  $_SERVER['REQUEST_URI'];
@@ -20,7 +23,7 @@ function dd($var)
 function abort($code = Response::NOT_FOUND)
 {
    http_response_code($code);
-   require "views/errors/{$code}.views.php";
+   view("errors/{$code}");
    die();
 }
 

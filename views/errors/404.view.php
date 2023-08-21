@@ -1,6 +1,6 @@
 <!-- 404 error page styled with tailwind css and some modern design and illustrations -->
 <?php
-view('partials/header.php', ['page' => '404'])
+view('partials/header', ['page' => '404'])
 ?>
 
 <div class="flex flex-col items-center justify-center h-screen ">
@@ -13,5 +13,5 @@ view('partials/header.php', ['page' => '404'])
 </div>
 
 <?php
-view('partials/footer.php')
+view('partials/footer')
 ?>

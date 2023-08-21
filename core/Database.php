@@ -1,4 +1,11 @@
 <?php
+
+//we use namespace to avoid conflict between classes with the same name and like to categorize the classes
+namespace Core;
+
+use PDO;
+use PDOException;
+
 class Database
 {
     private $pdo;

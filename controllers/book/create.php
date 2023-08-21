@@ -1,7 +1,8 @@
 <?php
 
-//require functions
-require path('Validator.php');
+use Core\Database;
+use Core\Validator;
+
 
 //connect with the database
 $config = require path('config.php');
@@ -9,7 +10,7 @@ $db = new Database($config['database']);
 $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
+   
     if (!Validator::lenghtValidator($_POST["title"], 2, 255)) {
         $errors["title"] = "Title must be between 2 and 255 characters";
     }
