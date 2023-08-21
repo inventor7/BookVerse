@@ -10,7 +10,7 @@ spl_autoload_register(function ($class) {
     require path("{$class}.php");
 });
 
-
+require path('boot.php');
 $router = new Core\Router();
 require path('routes.php');
 

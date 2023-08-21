@@ -1,12 +1,11 @@
 <?php
 
-use Core\Database;
 use Core\Validator;
-
+use Core\App;
 
 //connect with the database
-$config = require path('config.php');
-$db = new Database($config['database']);
+$db = App::container('Core\Database');
+
 $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

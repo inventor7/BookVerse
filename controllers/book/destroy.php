@@ -1,13 +1,13 @@
 <?php
 
-use Core\Database;
 use Core\Response;
-
-$currentUserId = 5;
+use Core\App;
 
 //connect with the database
-$config = require path('config.php');
-$db = new Database($config['database']);
+$db = App::container('Core\Database');
+
+$currentUserId = 4;
+
 
 //authorize
 $sql = "SELECT * FROM books WHERE id = :id";

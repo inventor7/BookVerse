@@ -1,22 +1,27 @@
 <?php
 
-use Core\Database;
 use Core\Response;
-
+use Core\App;
 
 //var
 $currentUserId = 4;
 
+
 //connect with the database
-$config = require path('config.php');
-$db = new Database($config['database']);
+$db = App::container('Core\Database');
+
+
+//query
+$book = $db->execute(
+    'SELECT * from books where id = :id',
+    ['id' => $_GET["id"]]
+)->findOrFail();
 
 
 
-$sql = "SELECT * from books where id = :id ";
-$book = $db->execute($sql, ['id' => $_GET["id"]])->findOrFail();
-
+//authorize
 authorize($currentUserId === 4, Response::FORBIDDEN);
+
 
 //pass data to the view
 view('book/show', [
