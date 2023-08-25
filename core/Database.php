@@ -56,4 +56,36 @@ class Database
         }
         return $result;
     }
+
+    public function isUnique($table, $field, $value)
+    {
+        $query = "SELECT * FROM $table WHERE $field = :value";
+        $params = [':value' => $value];
+        $result = $this->execute($query, $params)->find();
+        return $result ? true : false;
+    }
+
+    function findUserByEmail($email)
+    {
+        $query = "SELECT * FROM users WHERE email = :email";
+        $params = [':email' => $email];
+        $result = $this->execute($query, $params)->find();
+        return $result;
+    }
+
+
+    function findUserById($id)
+    {
+        $query = "SELECT * FROM users WHERE id = :id";
+        $params = [':id' => $id];
+        $result = $this->execute($query, $params)->find();
+        return $result;
+    }
+
+
+    
+
+
+
+
 }

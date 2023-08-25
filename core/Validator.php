@@ -10,4 +10,11 @@ class Validator
         trim($field);
         return strlen($field) >= $min && strlen($field) <= $max;
     }
+
+
+    public static function emailValidator($email)
+    {
+        trim($email);
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
 }

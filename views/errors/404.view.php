@@ -1,6 +1,7 @@
-<!-- 404 error page styled with tailwind css and some modern design and illustrations -->
 <?php
-view('partials/header', ['page' => '404'])
+view('/partials/header', ['page' => 'Book']);
+view('/partials/nav', ['page' => 'Book']);
+
 ?>
 
 <div class="flex flex-col items-center justify-center h-screen ">

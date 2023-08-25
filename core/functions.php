@@ -46,3 +46,31 @@ function view($view, $data = [])
    extract($data);
    require path("views/{$view}.view.php");
 }
+
+
+
+
+//Auth
+function login($user)
+{
+   $_SESSION['email'] = $user['email'];
+   $_SESSION['isLoggedin'] = true;
+
+   //regenerate session id
+   session_regenerate_id(true);
+   
+}
+
+function logout()
+{
+ //delete session and logout the user
+$_Session = [];
+
+//delete session and logout the user with the cookie
+session_destroy();
+
+$params = session_get_cookie_params();
+setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain']);
+
+
+}

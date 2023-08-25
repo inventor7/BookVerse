@@ -1,5 +1,7 @@
 <?php
-view('partials/header', ['page' => 'About']);
+view('/partials/header', ['page' => 'Book']);
+view('/partials/nav', ['page' => 'Book']);
+
 ?>
 
 <main class=" h-[50vh] w-full flex flex-col justify-center items-center">

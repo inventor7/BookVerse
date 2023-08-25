@@ -1,5 +1,7 @@
 <?php
-view('/partials/header', ['page' => 'Book'])
+view('/partials/header', ['page' => 'Book']);
+view('/partials/nav', ['page' => 'Book']);
+
 ?>
 
 

@@ -1,5 +1,6 @@
 <?php
-view('partials/header', ['page' => 'Books']);
+view('/partials/header', ['page' => 'Book']);
+view('/partials/nav', ['page' => 'Book']);
 ?>
 
 <main class=" mt-24  flex flex-col justify-center items-center w-full px-10 py-10">
@@ -19,13 +20,13 @@ view('partials/header', ['page' => 'Books']);
                 <h2 class="text-2xl text-white font-semibold pt-4">Description</h2>
                 <p class=" text-sm  "><?= $book["description"] ?></p>
                 <div class="flex-1 modif flex flex-row justify-start items-center gap-4 mt-10 ">
-                    <form method="POST" action="">
-                        <button class="px-4 py-1.5 rounded-lg bg-blue-600 text-white">Updtae</button>
-                    </form>
+
+                    <a href="/book/edit?id=<?= $book["id"] ?>" class="px-4 py-1.5 rounded-lg bg-blue-600 text-white">Edit</a>
+
                     <form method="POST" action="/book">
-                        <input type="hidden" name="_method" value="DELETE" >
-                        <input type="hidden" name="id" value="<?= $book["id"] ?>" >
-                      <button class="px-4 py-1.5 rounded-lg bg-red-600 text-white" >Delete</button>
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="id" value="<?= $book["id"] ?>">
+                        <button class="px-4 py-1.5 rounded-lg bg-red-600 text-white">Delete</button>
                     </form>
                 </div>
         </div>

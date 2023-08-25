@@ -14,6 +14,10 @@ require path('boot.php');
 $router = new Core\Router();
 require path('routes.php');
 
+//start the session
+session_start();
+
+
 
 // this is to get the url without the query string
 $uri = parse_url($_SERVER['REQUEST_URI'])["path"];
