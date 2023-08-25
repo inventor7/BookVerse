@@ -2,6 +2,7 @@
 
 use Core\App;
 use Core\Validator;
+use Http\Forms\LoginForm;
 
 
 if($_SERVER["REQUEST_METHOD"] === 'POST')
@@ -13,32 +14,18 @@ if($_SERVER["REQUEST_METHOD"] === 'POST')
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    //vars
-    $errors = [];
-
-    
-
-    //validate data
-    if(!Validator::lenghtValidator($email,13,255))
-    {
-        $errors['email'] = "Email has to be between 13 and 255 characters";
-        return view('user/login', [
-            'page' => 'Login',
-            'errors' => $errors
-        ]);
-    }
-
-
-    if(!Validator::lenghtValidator($password,6,20))
-    {
-        $errors['password'] = "Password has to be between 6 and 20 characters";
-        return view('user/login', [
-            'page' => 'Login',
-            'errors' => $errors
-        ]);
-    }
-
    
+    //validate data
+
+    $form = new LoginForm();
+    if(!$form->validate($email, $password)) //if the form is not valid
+    {
+        return view('user/login', [
+            'page' => 'Login',
+            'errors' => $form->getErrors()
+        ]);
+    }
+
 
     //check if the user exists
         $user = $db->findUserByEmail($email);

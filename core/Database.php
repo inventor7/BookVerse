@@ -22,7 +22,7 @@ class Database
         }
     }
 
-    public function execute($query, $params)
+    public function execute($query, $params = [])
     {
         $this->statement = $this->pdo->prepare($query);
         $this->statement->execute($params);

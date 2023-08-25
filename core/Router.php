@@ -30,7 +30,7 @@ class Router
             {
                 Middleware::resolve($route['middleware']);
             }
-            return require path('controllers/'.$route['controller']);
+            return require path('Http/controllers/'.$route['controller']);
             exit();
 
             }
