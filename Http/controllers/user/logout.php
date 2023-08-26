@@ -1,8 +1,11 @@
 <?php
-logout();
+
+use Core\Authenticator;
+
+(new Authenticator)->logout();
 
 //redirect to home page
-header('Location: /');
+redirect('/');
 
 
 ?>

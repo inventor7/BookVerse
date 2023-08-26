@@ -23,7 +23,7 @@ $router->patch('/books','book/update.php')->middleware('auth');       //update :
 $router->get('/user/create','user/create.php')->middleware('guest');          //create  : form to create a user
 $router->post('/users','user/store.php')->middleware('guest');               //store   : store a user
 
-$router->get('/user/login','user/login.php')->middleware('guest');             //login   : form to login
+$router->get('/user/login','user/loginPage.php')->middleware('guest');             //login   : form to login
 $router->post('/user/login','user/login.php')->middleware('guest');            //login   : login a user
 
 $router->post('/user/logout','user/logout.php')->middleware('auth');            //logout   : logout a user

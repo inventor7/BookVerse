@@ -1,6 +1,7 @@
 <?php
 
 use Core\Response;
+use Core\Session;
 
 function navigationStyle($url)
 {
@@ -47,30 +48,17 @@ function view($view, $data = [])
    require path("views/{$view}.view.php");
 }
 
-
-
-
-//Auth
-function login($user)
+function old($key, $default = '')
 {
-   $_SESSION['email'] = $user['email'];
-   $_SESSION['isLoggedin'] = true;
-
-   //regenerate session id
-   session_regenerate_id(true);
-   
+   return Session::get('old')[$key] ?? $default;
 }
 
-function logout()
+
+
+
+
+function redirect($path)
 {
- //delete session and logout the user
-$_Session = [];
-
-//delete session and logout the user with the cookie
-session_destroy();
-
-$params = session_get_cookie_params();
-setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain']);
-
-
+   header("Location: {$path}");
+   exit();
 }

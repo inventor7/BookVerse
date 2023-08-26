@@ -74,13 +74,13 @@ class Database
     }
 
 
-    function findUserById($id)
-    {
-        $query = "SELECT * FROM users WHERE id = :id";
-        $params = [':id' => $id];
-        $result = $this->execute($query, $params)->find();
-        return $result;
-    }
+    // function findUserById($id)
+    // {
+    //     $query = "SELECT * FROM users WHERE id = :id";
+    //     $params = [':id' => $id];
+    //     $result = $this->execute($query, $params)->find();
+    //     return $result;
+    // }
 
 
     

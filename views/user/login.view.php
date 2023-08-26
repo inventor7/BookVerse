@@ -36,7 +36,7 @@ view('partials/header');
                   <div>
                     <label for="email" class="block text-sm mb-2 dark:text-white">Email address</label>
                     <div class="relative">
-                      <input type="email" id="email" name="email" value="<?= $_POST['email'] ?? '' ?>" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" required aria-describedby="email-error">
+                      <input type="email" id="email" name="email" value="<?= old('email') ?? ''  ?>" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" required aria-describedby="email-error">
                       <div class="<?= isset($errors['email']) ? 'flex' : 'hidden' ?> absolute inset-y-0 right-0  items-center pointer-events-none pr-3">
                         <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
@@ -54,7 +54,7 @@ view('partials/header');
                       <a class="text-sm text-blue-600 decoration-2 hover:underline font-medium" href="../examples/html/recover-account.html">Forgot password?</a>
                     </div>
                     <div class="relative">
-                      <input type="password" id="password" name="password" value="<?= $_POST['password'] ?? '' ?>" class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" required aria-describedby="password-error">
+                      <input type="password" id="password" name="password"  class="py-3 px-4 block w-full border-2 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400" required aria-describedby="password-error">
                       <div class="<?= isset($errors['password']) ? 'flex' : 'hidden' ?> absolute inset-y-0 right-0  items-center pointer-events-none pr-3">
                         <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>

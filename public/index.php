@@ -1,4 +1,6 @@
 <?php
+
+use Core\Session;
 const BASE_PATH = __DIR__ . '/../';
 
 require BASE_PATH . 'core/functions.php';
@@ -30,5 +32,6 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 //action !!
 $router->route($uri, $method);
 
-
+//unset the flash session
+Session::unflash();
 

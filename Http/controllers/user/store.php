@@ -76,7 +76,7 @@ if(!Validator::emailValidator($email))
 //isUnique
 if($db->isUnique('users','email',$email))
 {
-    $errors['email'] = "This email is already taken";
+    $errors['email'] = "This email is already taken try "."Signin";
     return view('user/create', [
         'page' => 'Create User',
         'errors' => $errors
