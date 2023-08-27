@@ -5,12 +5,8 @@ const BASE_PATH = __DIR__ . '/../';
 
 require BASE_PATH . 'core/functions.php';
 
-//this is to just call it when you need it not all the time you enter an url 
-spl_autoload_register(function ($class) { 
-    //Core\Databse or Core\Response or Core\Router
-    $class = str_replace('\\', '/', $class);
-    require path("{$class}.php");
-});
+//require the composer autoloader
+require BASE_PATH . 'vendor/autoload.php';
 
 require path('boot.php');
 $router = new Core\Router();

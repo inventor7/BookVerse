@@ -1,4 +1,13 @@
 {
-    "name": "lenovo/book-verse",
-    "require": {}
+  "name": "lenovo/book-verse",
+  "require": {
+    "illuminate/collections": "^10.20"
+  },
+  "autoload": {
+    "psr-4": {
+        "Core\\": "Core/",
+        "Http\\": "Http/"
+    }
+  }
+
 }
